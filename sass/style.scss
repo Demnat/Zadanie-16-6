@@ -1,0 +1,145 @@
+@import "flexGrid";
+
+%btn {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: #55ACEE; 
+    font: 16px Verdana, sans-serif;
+    color:  #fff;
+
+    &:disabled {
+        background-color: #9ac9ec;
+    }
+}
+
+%headers {
+    width: 100%;
+    text-align: center;
+    color: #55ACEE;
+    font-family: Verdana, sans-serif;
+}
+
+.index {
+    background-color: #c7ecee;
+
+    &__main {
+        min-height: 98vh;
+        padding: 15px;
+        background-color: #dff9fb;
+        box-shadow: 2px 8px 10px rgba(0,0,0,0.25);
+
+        &-h1 {
+            @extend %headers;
+            text-transform: uppercase;
+        }
+
+        &-h2 {
+            @extend %headers;
+            color: #22a6b3;
+        }
+
+        &-form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            &-btn {
+                @extend %btn;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+    
+            &-input {
+                margin: 0 20px 0 0;
+                padding: 10px;
+                min-width: 150px;
+                height: 40px;
+                font: 14px Verdana, sans-serif;
+                color: #130f40;
+                border-radius: 3px;
+                border: 1px solid #55ACEE;
+                &:hover {
+                    border: 1px solid #9ac9ec;
+                    color: #30336b;
+                }
+            }
+        }
+        
+        &-ul {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            
+
+            &-item {
+                margin: 20px;
+                padding: 30px;
+                max-width: 46%;
+                display: inline-block;
+                
+                font: 14px Verdana, sans-serif;
+                color: #130f40;
+                box-shadow: 2px 8px 10px rgba(0,0,0,0.25);
+
+                &-dataContainer {
+                    background-color: #7ed6df;
+
+                    &-flag {    
+                        padding: 10px;
+                        max-width: 100%;
+                        height: auto;
+                    }
+
+                    &-name {
+                        margin: 0;
+                        padding: 10px 15px;
+                        font-size: 30px;
+                        text-transform: uppercase;
+                    }
+
+                    &-infoHeader {
+                        margin: 0;
+                        width: 100%;
+                        padding: 5px 10px;
+                        background-color: #badc58;
+                    }
+
+                    &-info {
+                        padding: 0 0 30px 0;
+                        background-color: #badc58;
+
+                        &-header {
+                            margin: 0;
+                            padding: 5px 10px;
+                            background-color: #f9ca24;
+
+                            &:nth-child(even) {
+                                background-color: #f0932b;
+                            }
+
+                        }
+
+                        &-data {
+                            margin: 0;
+                            padding: 5px 10px;
+                            font-weight: bold;
+                            background-color: #f6e58d;
+
+                            &:nth-child(even) {
+                                background-color: #ffbe76;
+                            }
+
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}

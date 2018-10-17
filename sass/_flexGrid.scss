@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+  
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+  
+.container-fluid {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin grid($prefix) {
+    @for $i from 1 through 12 {
+        .col-#{$prefix}-#{$i} {
+            $width: 100% / 12 * $i;
+            flex: 0 0 $width;
+            max-width: $width;
+        }
+    }
+}
+
+@mixin margin($prefix, $side) {
+    @for $i from 1 through 12 {
+        .col-#{$prefix}-#{$i} {
+            $width: 100% / 12 * $i;
+            margin-#{$side}: $width;
+        }
+    }
+}
+
+/* For phones and old tablets: */
+@media(max-width: 767px) {
+    @include grid('sm');
+    @include margin('offset-sm','left');
+    @include margin('offsetR-sm','right');
+}
+
+/* For tablets: */
+@media(min-width: 768px) {
+    @include grid('md');
+    @include margin('offset-md','left');
+    @include margin('offsetR-md','right');
+}
+
+/* For old desktop: */
+@media(min-width: 992px) {
+    @include grid('lg');
+    @include margin('offset-lg','left');
+    @include margin('offsetR-lg','right');
+}
+
+/* For desktop: */
+@media(min-width: 1200px) {
+    @include grid('xl');
+    @include margin('offset-xl','left');
+    @include margin('offsetR-xl','right');
+}
